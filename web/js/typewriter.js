@@ -1,6 +1,4 @@
-// typewriter
 
-// 3215287
 // bertaec32@gmail.com
 (function($, w, d, undefined) {
 
