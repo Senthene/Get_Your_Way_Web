@@ -74,10 +74,7 @@
 							<span class="typed-cursor">|</span>
 						</div>
                                                 <form id="signup-form" method="post" >
-                                                    <a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Ajouter votre carte</a>
-                                                    
-                                                   
-                                                  
+                                                       <a href="html/AjouterCarte.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Ajouter votre carte</a>
                                                 </form>
 					</div>
 				</div>
@@ -95,7 +92,7 @@
 						<h5 class="white heading hide-hover">Entreprise</h5>
 						<div class="bottom">
 							<h4 class="white heading small-heading no-margin regular">Fructifier le temps de vos employés</h4>
-							<a href="#" class="btn btn-white-fill expand">Insérer votre carte</a>
+							<a href="html/AjouterCarte.html" class="btn btn-white-fill expand">Insérer votre carte</a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +101,7 @@
 						<h5 class="white heading hide-hover">Lieu Culturel</h5>
 						<div class="bottom">
 							<h4 class="white heading small-heading no-margin regular">Proposer un itinéraire à vos visiteurs</h4>
-							<a href="#" class="btn btn-white-fill expand">Insérer votre carte</a>
+							<a href="html/AjouterCarte.html" class="btn btn-white-fill expand">Insérer votre carte</a>
 						</div>
 					</div>
 				</div>
@@ -227,14 +224,9 @@
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<h3 class="white">Ajouter votre carte</h3>
+				<h3 class="white">Se connecter</h3>
 				<form class="popup-form" onsubmit="return verifForm(this)">
-					<input type="text" class="form-control form-white" placeholder="Nom de l'établissement" id="nom" onblur="verif_champ(this)">
-                                        <input type="text" class="form-control form-white" placeholder="Adresse" id="addresse" onblur="verif_champ(this)">
-                                        <input type="text" class="form-control form-white" placeholder="Code Postale" id="cp" pattern="[0-9]*" maxlength="5" onblur="verif_champ(this)">
-					<input type="text" class="form-control form-white" placeholder="Addresse Email" id="email" onblur="verifMail(this)">
-                                        <input type="file" name="carte" id="carte" placeholder="Ajouter votre carte" />
-					<button type="submit" class="btn btn-submit">Ajouter</button>
+					<button type="submit" class="btn btn-submit">Se Connecter</button>
 				</form>
 			</div>
 		</div>

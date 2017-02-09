@@ -216,6 +216,11 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 	background: #31b9ff;
 }
 
+.btn.btn-Nblue-fill {
+	color: #00a8ff;
+	border-color: #00a8ff;
+	background: transparent;
+}
 .btn.btn-blue-fill {
 	color: #00a8ff;
 	border-color: #00a8ff;
