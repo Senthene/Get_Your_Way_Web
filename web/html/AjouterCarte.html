@@ -78,33 +78,49 @@
 				</div>
 			</div>
 		</div>
-
-	</header>
+        </header>
 	<section id="services" class="section section-padded">
 		<div class="container">
                     <div class="row text-center title">
-				<h2>Ajouter une carte</h2>
-				<h4 class="light muted">Les informations concernants votre établisement</h4>
+				<h2>Rechercher votre établissement</h2>
+                                <h4 class="light muted">Ajouter le nom ou l'adresse de votre établissement</h4>
 			</div>
 				<form class="btn btn-white-fill expand" onsubmit="return verifForm(this)">
-					<input type="text" class="btn btn-Nblue-fill " placeholder="Nom de l'établissement" id="nom" onblur="verif_champ(this)">
-                                        <input type="text" class="btn btn-Nblue-fill " placeholder="Adresse" id="addresse" onblur="verif_champ(this)">
-                                        <input type="text" class="btn btn-Nblue-fill expand" placeholder="Code Postale" id="cp" pattern="[0-9]*" maxlength="5" onblur="verif_champ(this)">
-                                        <input type="text" class="btn btn-Nblue-fill expand" placeholder="Addresse Email" id="email" onblur="verifMail(this)" disabled="">
-                                        
+					<!--<input type="text" class="btn btn-Nblue-fill " placeholder="Nom de l'établissement" id="nom" onblur="verif_champ(this)">-->
+                                        <input type="text" class="btnSaisie btn-Nblue-fill " placeholder="Adresse" id="addresse" onblur="verif_champ(this)">
+                                        <!--<input type="text" class="btn btn-Nblue-fill expand" placeholder="Addresse Email" id="email" onblur="verifMail(this)" disabled="">-->
                                         <input id="submit" class="btn btn-blue" type="button" value="Géolocaliser" onclick="geocodeAddress()">
-                                        
-                                        
 				</form>
                     
-                   
+                    <div id="divResultat" class="row text-center title" style="display: none">
+				<h2>Nous avons trouvé l'adresse suivante :</h2>
+				
+                    </div>
                     <div id="map" ></div>
-                    
+                    <div id="divConfirmation" class="row text-center title" style="display: none">
+                        <h4 class="light muted">Est ce bien votre établissement ?</h4>
+                            <p id="resultat"></p>                                        
+                            <input id="submit" class="btn btn-blue" type="button" value="Oui" onclick="addressValide()">
+                            <input id="submit" class="btn btn-rose" type="button" value="Non" onclick="addressNonValide()">
+                            
+                    </div>
 		</div>
 		<div class="cut cut-bottom"></div>
 	</section>
+    
+    
+    
+    <!-- Section de d'ajout d'une carte -->
+    	<section id="Insertion" class="section section gray-bg" style="display: none">
+		<div class="container">
+                    <input class="input-file" id="my-file" type="file" onchange="chargementImage()">
+                    <label for="my-file" class="input-file-trigger" tabindex="0">Ajouter votre carte</label>
+                </div>
+            <img id="imagePortrait" src="" />
+		<canvas id="canvas"></canvas>
+	</section>
 	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<input type="file" class="btn btn-white-fill expand" name="carte" id="carte"  />	
+		
 	</div>
 	<footer>
 		<div class="container">

@@ -202,6 +202,20 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
+.btnSaisie {
+	font-size: 18px;
+	display: inline-block;
+        width: 900px;
+        height: 59px;
+	padding: 15px;
+	color: white;
+	border: 2px solid transparent;
+	border-radius: 2px;
+	background: transparent;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
 
 .btn:hover,
 .btn:focus {
@@ -211,12 +225,16 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 .btn.btn-blue {
 	background: #00a8ff;
 }
-
+.btn.btn-rose {
+	background: #ff30ac;
+}
 .btn.btn-blue:hover {
 	background: #31b9ff;
 }
-
-.btn.btn-Nblue-fill {
+.btn.btn-rose:hover {
+	background: #e02f99;
+}
+.btnSaisie.btn-Nblue-fill {
 	color: #00a8ff;
 	border-color: #00a8ff;
 	background: transparent;
@@ -285,7 +303,7 @@ section {
 }
 
 .section-padded {
-	padding: 140px 0 40px;
+	padding: 150px 0 40px;
 }
 
 .cut-top {
@@ -1186,5 +1204,56 @@ footer .social-footer li:hover a {
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
+}
+/* styles de base si JS est activé */
+.js .input-file-container {
+  position: relative;
+  width: 225px;
+}
+.js .input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: #39D2B4;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+}
+.js .input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  padding: 14px 0;
+  opacity: 0;
+  cursor: pointer;
+}
+ 
+/* quelques styles d'interactions */
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+  background: #34495E;
+  color: #39D2B4;
+}
+ 
+/* styles du retour visuel */
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+/* on complète l'information d'un contenu textuel
+   uniquement lorsque le paragraphe n'est pas vide */
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
 }
         
