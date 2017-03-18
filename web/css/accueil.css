@@ -800,12 +800,13 @@ footer .social-footer li:hover a {
 /* Form Control */
 
 .form-control {
-	font-size: 18px;
+	font-size: 15px;
 	position: relative;
 	left: 0;
 	height: auto;
-	padding: 20px 30px;
+	padding: 9px 15px;
 	border: 1px;
+        border: 1px solid #ccc;
 	border-radius: 0;
 	box-shadow: 0;
 }

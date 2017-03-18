@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Get Your Way - Inscription</title>
+	<meta name="description" content="Projet Université" />
+
+        
+	<meta name="author" content="Abdelkarim" />
+	<link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../img/favicons/apple-touch-icon-60x60.png">
+	<link rel="icon" type="image/png" href="../img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="../img/favicons/manifest.json">
+	<link rel="shortcut icon" href="../img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta name="msapplication-config" content="../img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="../css/owl.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="../fonts/eleganticons/et-icons.css">
+	<!-- accueil -->
+	<link rel="stylesheet" type="text/css" href="../css/accueil.css">
+        
+</head>
+
+<body>
+	<div class="preloader">
+            <img src="../img/loader.gif" alt="Preloader image">
+	</div>
+	<nav class="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html"><img data-active-url="../img/logo-active.png" alt=""></a>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+      
+	<section id="création" class="section section-padded">
+		<div class="container">
+			<div class="row text-center title">
+				<h2>Créer un compte facilement !</h2>
+				<h4 class="light muted">Qui êtes vous ?</h4>
+			</div>
+			<div class="container">
+                            <form method="post" action="Profil.html">
+                                
+                                    <div class="form-group row">
+                                        <label for="labelEmail" class="col-sm-2 col-form-label">Nom</label>
+                                        <div class="col-sm-10">
+                                          <input type="text" class="form-control" placeholder="Nom" id="nom" onblur="verif_champ(this)"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="labelName" class="col-sm-2 col-form-label">Prénom</label>
+                                        <div class="col-sm-10">       
+                                            <input type="text" class="form-control" placeholder="Prénom" id="prénom" onblur="verif_champ(this)"/> 
+                                     </div>
+                                    </div>  
+                                    <div class="form-group row">
+                                        <label for="labelName" class="col-sm-2 col-form-label">Adresse email</label>
+                                        <div class="col-sm-10">   
+                                            <input type="email" class="form-control" placeholder="Email"  id="email" onblur="verifMail(this)"/> 
+                                            <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre email avec quelqu'un d'autre.</small>
+                                        </div>
+                                    </div>  
+                                    <div class="form-group row">
+                                        <label for="labelMotdePasse1" class="col-sm-2 col-form-label">Mot de passe</label>
+                                        <div class="col-sm-10">           
+                                            <input type="password" class="form-control" placeholder="Mot de passe" id="mdp" onblur="verif_champ(this)"/> 
+                                            <small id="emailHelp" class="form-text text-muted">Entrer à nouveau votre mot de passe</small>
+                                            <input type="password" class="form-control" placeholder="Confirmez votre mot de passe" id="mdp2" onblur="verif_champ(this)"/>
+                                        </div>
+                                    </div> 
+                                    <div class="form-group row">
+                                        <div class="offset-sm-2 col-sm-10">
+                                            <a class="btn btn-blue" onclick="Inscription()">Créer votre compte</a>
+                                        </div>
+                                    </div>
+                                
+                            </form>
+                        </div>
+		</div>
+		<div class="cut cut-bottom"></div>
+	</section>                           
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 text-center-mobile">
+					<h3 class="white">En partenariat avec l'Université d'Evry</h3>
+					<h5 class="light regular light-white">Tuteur du projet : Monsieur Ledoux</h5>
+				</div>
+		</div>
+			<div class="row bottom-footer text-center-mobile">
+
+			</div>
+		</div>
+	</footer>
+	<!-- Holder for mobile navigation -->
+	<div class="mobile-nav">
+		<ul>
+		</ul>
+		<a href="#" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+	<!-- Scripts -->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/wow.min.js"></script>
+	<script src="../js/typewriter.js"></script>
+	<script src="../js/jquery.onepagenav.js"></script>
+	<script src="../js/main.js"></script>
+        <script src="../js/Création_Compte.js" type="text/javascript"></script>
+</body>
+
+</html>

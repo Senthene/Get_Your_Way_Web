@@ -61,9 +61,9 @@ function AjouterCarte() {
     {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var re = "http://192.168.1.50/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"";
+    var re = "http://192.168.43.30/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"";
     //on appelle le fichier requete.txt
-    xhr.open("GET","http://192.168.1.50/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"" , true);
+    xhr.open("GET","http://192.168.43.30/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"" , true);
     xhr.send(null);
 
     
