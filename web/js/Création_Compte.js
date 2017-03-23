@@ -44,32 +44,25 @@ function CreationCompte() {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
     //alert("http://192.168.1.50/Requetes.php?nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=2");
-    console.log("http://192.168.43.30/Requetes.php?nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=1&y=2");
+    //console.log("http://192.168.1.50/Requetes.php?nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=1&y=2");
     //on appelle le fichier requete.txt
     
-    xhr.open("GET","http://192.168.43.30/Requetes.php?nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=1&y=2" , true);
-    
+    xhr.open("POST","http://192.168.1.50/Requetes.php" , true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    //xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
-    xhr.send(null);
+    xhr.send("nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=1&y=2");
 
-   // var xmlhttp = new XMLHttpRequest();
-    //var dep = cp.substr(0,2);
-   // var url = "http://localhost:8080/E-DRIVE/webresources/Utilisateur/Inscription";
-   //xmlhttp.open('POST',url,true);
-    //xmlhttp.setRequestHeader("Content-type", "application/json");
-    //var data = JSON.stringify({"email":email,"type":type,"nom":nom,"prenom":prénom,"dateNaissance":dateNaissance,"mdp":mdp,"numeroTel":parseInt(téléphone),"adresse":adresse,"codePostale":parseInt(cp), "departement":parseInt(dep)});
-       
-    //xmlhttp.send(data);
     xhr.onreadystatechange = function() {
          
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-               if(xhr.responseText=="KO"){
+               if(xhr.responseText=="OK"){
+                   sessionStorage.setItem("objet",monobjet_json );
+                   location.href="Profil.html";
+               }
+               else if(xhr.responseText=="KO"){
                    alert("Cette adresse email existe déja.");
                }
-               else{
-                    //sessionStorage.setItem("objet",monobjet_json );
-                    //location.href="Profil.html";
+               else {
+                   alert(xhr.responseText);
                }
             }
     };

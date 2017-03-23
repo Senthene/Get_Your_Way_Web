@@ -164,36 +164,7 @@ a {
 }
 /* Navigation Bar ( Navbar ) */
 
-nav.navbar {
-	position: absolute;
-	z-index: 9500;
-	width: 100%;
-	width: 100vw;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
 
-nav.navbar .navbar-nav li.active a:not(.btn) {
-	color: #00a8ff !important;
-}
-
-nav.navbar-fixed-top {
-	z-index: 9499;
-	top: 0;
-	padding: 25px 0;
-	opacity: 0;
-	background: white;
-	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.05);
-}
-
-nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
-	color: #bbb;
-}
-
-
-.icon-bar {
-	background: #bbb;
-}
 /* Buttons */
 
 .btn {
@@ -1287,11 +1258,12 @@ footer .social-footer li:hover a {
 }
 .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
-    color: #595959; font-size: 
-        16px; margin-bottom: 5px;
+    color: white; 
+    font-size: 16px; 
+    margin-bottom: 5px;
 }
 .bs-wizard > .bs-wizard-step .bs-wizard-info {
-    color: #999; 
+    color: #FFF59D; 
     font-size: 14px;
 }
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot {

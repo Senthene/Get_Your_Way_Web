@@ -7,29 +7,30 @@ function Connexion(){
 
     var email = document.getElementById('email').value;
     var mdp = document.getElementById('mdp').value;
-   
+    var xmlhttp =null;
     var xmlhttp = new XMLHttpRequest();
     
-    var url = "http://192.168.43.30/Requetes.php?email=" + email + "&mdp=" + mdp + "&i=1&y=1";
+    var url = "http://192.168.1.50/Requetes.php";
     
-    console.log(url);
-    xmlhttp.open('GET',url,true);
-    xmlhttp.send(null);
+    xmlhttp.open('POST',url,true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send("email=" + email + "&mdp=" + mdp + "&i=1&y=1");
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
             if ( xmlhttp.status == 200) {
                 if (xmlhttp.responseText == 0) {
                     alert("Votre identifiant ou votre mdp n'existe pas");
                 }
-                else{
+                else if(xmlhttp.responseText == "42S020"){
+                    alert("Erreur sur la requete SQL");
+                }
+                else {
                     var resultat = eval( "(" +  xmlhttp.responseText + ")"); 
-                    //resultat = resultat.split('\\').join("'"); //replace("\"", //g);
-                    //resultat = resultat.split('[').join(' ');//("[", /\s/g);
-                    //resultat = resultat.split(']').join(' '); //replace("]", /\s/g);
                     var monobjet_json = JSON.stringify(resultat);
                     sessionStorage.setItem("objet",monobjet_json);
                     document.getElementById('profil').click();
-                }
+               }
+
             }
             else {
                 alert("Error ->" + xmlhttp.responseText);

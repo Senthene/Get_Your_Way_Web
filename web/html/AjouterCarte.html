@@ -34,95 +34,170 @@
 	<!-- Elegant Icons -->
 	<link rel="stylesheet" type="text/css" href="../fonts/eleganticons/et-icons.css">
 	<!-- accueil -->
-	<link rel="stylesheet" type="text/css" href="../css/accueil.css">
+	<link rel="stylesheet" type="text/css" href="../css/Profil.css">
         <script src="../js/Verification_Compte.js" type="text/javascript"></script>
 </head>
 
 <body onload="verifCompte()">
-	<div class="preloader">
-		<img src="../img/loader.gif" alt="Preloader image">
+    <div class="preloader">
+	<img src="../img/loader.gif" alt="Preloader image">
+    </div>
+	
+    <section class="section cyan">
+        <div class="container">
+            <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Menu</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="../index.html"><img src="../img/logo.png" data-active-url="../img/logo-active.png" alt="../index.html"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav navbar-right main-nav">
+                   
+                    <li></li>
+		</ul>
+            </div>
+            <div class="row bs-wizard" style="border-bottom:0;">
+                <div id="step-1" class="col-xs-3 bs-wizard-step active">
+                  <div class="text-center bs-wizard-stepnum white">Etape 1</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center white">Renseigner votre adresse</div>
+                  
+                </div>
+                
+                <div id="step-2" class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                  <div  class="text-center bs-wizard-stepnum">Etape 2</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Valider votre établissement</div>
+                </div>
+                
+                <div id="step-3" class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">Etape 3</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Ajouter votre carte</div>
+                </div>
+                
+                <div id="step-4" class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">Etape 4</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center"> Personaliser votre carte</div>
+                </div>
+            </div>
+            <div class="row bs-wizard" style="display: none" id="resultatRecherche">
+                <div class="text-center light muted"> <h6>Votre carte</h6></div>
+                <div class="bs-wizard-stepnum" id="adresse"> <h6>Adresse : </h6></div>
+                <div class="bs-wizard-stepnum" id="place_id"><h6>Identifiant ID :</h6></div>
+                <div class="bs-wizard-stepnum" id="latitude"><h6>Latitude :</h6></div>
+                <div class="bs-wizard-stepnum" id="longitude"><h6>Longitude : </h6></div>
+            </div>
 	</div>
-	<nav>
-		<div class="container">
-			<div>
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><img src="../img/logo.png" data-active-url="../img/logo-active.png" alt=""></a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right main-nav">
-                                        <li><a href="../index.html">Accueil</a></li>
-					<li><a href="#intro">Insérer une Carte</a></li>
-					<li></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container-fluid -->
-	</nav>
-
-	<section id="services" class="section section-padded">
-		<div class="container">
-                    <div class="row text-center title">
-				<h2>Rechercher votre établissement</h2>
-                                <h4 class="light muted">Ajouter le nom ou l'adresse de votre établissement</h4>
-			</div>
-				<form class="btn btn-white-fill expand" onsubmit="return verifForm(this)">
-					<!--<input type="text" class="btn btn-Nblue-fill " placeholder="Nom de l'établissement" id="nom" onblur="verif_champ(this)">-->
-                                        <input type="text" class="btnSaisie btn-Nblue-fill " placeholder="Adresse" id="addresse" onblur="verif_champ(this)">
-                                        <!--<input type="text" class="btn btn-Nblue-fill expand" placeholder="Addresse Email" id="email" onblur="verifMail(this)" disabled="">-->
-                                        <input id="submit" class="btn btn-blue" type="button" value="Géolocaliser" onclick="geocodeAddress()">
-				</form>
-                    
-                    <div id="divResultat" class="row text-center title" style="display: none">
-				<h4>Nous avons trouvé l'adresse suivante :</h4>
-				
+    </section>
+    
+    <section id="etape-1" class="section">
+	<div class="container" >
+            <div class="row text-center title">
+		<h3>Rechercher votre établissement</h3>
+                
+            </div>
+            <form class="btn btn-white-fill expand" onsubmit="return verifForm(this)">
+		<!--<input type="text" class="btn btn-Nblue-fill " placeholder="Nom de l'établissement" id="nom" onblur="verif_champ(this)">-->
+                <input type="text" class="btnSaisie btn-Nblue-fill " placeholder="Ajouter le nom ou l'adresse de votre établissement" id="addresse" onblur="verif_champ(this)">
+                <!--<input type="text" class="btn btn-Nblue-fill expand" placeholder="Addresse Email" id="email" onblur="verifMail(this)" disabled="">-->
+                <input id="submit" class="btn btn-blue" type="button" value="Géolocaliser" onclick="geocodeAddress()">
+            </form> 
+        </div>
+        <div class="cut cut-bottom"></div>
+    </section>
+    
+    <section id="etape-2">
+	<div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="divResultat" class="row text-center title" style="display: none">	
                     </div>
                     <div id="map" ></div>
+                </div>
+                <div class="col-md-4">
                     <div id="divConfirmation" class="row text-center title" style="display: none">
                         <h4 class="light muted">Est ce bien votre établissement ?</h4>
-                            <p id="resultat"></p>                                        
-                            <input id="submit" class="btn btn-blue" type="button" value="Oui" onclick="addressValide()">
-                            <input id="submit" class="btn btn-rose" type="button" value="Non" onclick="addressNonValide()">
-                            
+                        <p id="resultat"></p>                                        
+                        <input id="submit" class="btn btn-blue" type="button" value="Oui" onclick="addressValide()">
+                        <input id="submit" class="btn btn-rose" type="button" value="Non" onclick="addressNonValide()">
                     </div>
-		</div>
-		<div class="cut cut-bottom"></div>
-	</section>
-    
-    
-    
-    <!-- Section de d'ajout d'une carte -->
-    	<section id="Insertion" class="section section gray-bg" style="display: none">
-		<div class="container">
-                    <p id="resultat"></p> 
-                    <input class="input-file" id="my-file" type="file" onchange="chargementImage()">
-                    <label for="my-file" class="input-file-trigger" tabindex="0">Ajouter votre carte</label>
                 </div>
-            <img id="imagePortrait" src="" />
-		<canvas id="canvas"></canvas>
-	</section>
-	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		
-	</div>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 text-center-mobile">
-					<h3 class="white">En partenariat avec l'Université d'Evry</h3>
-					<h5 class="light regular light-white">Tuteur du projet : Laurent Poligny</h5>
-				</div>
-		</div>
-			<div class="row bottom-footer text-center-mobile">
+            </div>
+        </div>
+    </section>
+    
+     <section id="etape-3" style="display: none">
+        <br />
+        <div class="container">
+            <h4>Sélectionner votre type de carte</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="form-horizontal well" role="form">
+                        <div class="row">
+                            <div class="col-xs-4" align="center">
+                                <label> Autocad </label>
+                                <img src="../images/autocad-logo.png" class="img-responsive img-radio">
+                                <div class="radio" align="center">
+                                    <input type="radio" name="optradio" value="autocad" onclick="etape4()">
+                                </div>
+                            </div>
+                                <div class="col-xs-4">
+                                </div>
+                            <div class="col-xs-4" align="center">
+                                <label> Fichier image </label>
+                                    <img src="../images/png.png" class="img-responsive img-radio">
+                                    <div class="radio" align="center">
+                                        <input type="radio" name="optradio" value="image" onclick="etape4()">
+                                    </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sction>
+    
+    <section id="etape-4" style="display: none">
+        <div class="container">
+            <h4>Ajouter votre carte</h4>
+            <hr>
+            <p id="resultat"></p> 
+            <input class="input-file" id="my-file" type="file" onchange="chargementImage()">
+            <label for="my-file" class="input-file-trigger" tabindex="0">Ajouter votre carte</label>
+        </div>
+    </section>
+    <!-- Section de d'ajout d'une carte -->
+   
+    <section id="etape-5" class="section section gray-bg"
+        <canvas id="canvas"> 
+            Texte alternatif pour les navigateurs ne supportant pas Canvas.
+        </canvas>
+    </section>
 
-			</div>
+    <footer>
+	<div class="container">
+            <div class="row">
+		<div class="col-sm-6 text-center-mobile">
+                    <h3 class="white">En partenariat avec l'Université d'Evry</h3>
+                    <h5 class="light regular light-white">Tuteur du projet : Laurent Poligny</h5>
 		</div>
-	</footer>
+            </div>
+            <div class="row bottom-footer text-center-mobile">
+            </div>
+        </div>
+    </footer>
 	<!-- Holder for mobile navigation -->
 	<div class="mobile-nav">
 		<ul>

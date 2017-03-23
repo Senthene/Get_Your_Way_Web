@@ -61,9 +61,9 @@ function AjouterCarte() {
     {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var re = "http://192.168.43.30/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"";
+    //var re = "http://192.168.1.50/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"";
     //on appelle le fichier requete.txt
-    xhr.open("GET","http://192.168.43.30/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"" , true);
+    xhr.open("GET","http://192.168.1.45/Requetes.php?nom=" + nom + "&email=" + email + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 1 +"" , true);
     xhr.send(null);
 
     
@@ -121,9 +121,9 @@ function insert(plan, nom, addresse, cp)
     {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-        var re = "http://192.168.1.50/Requetes.php?DepartX=" + plan.DepartX + "&DepartY=" + plan.DepartY + "&DepartZ=" + plan.DepartZ + "&FinX=" + plan.FinX +"&FinY=" + plan.FinY + "&FinZ=" + plan.FinZ + "&Angle=" + plan.Angle +"&nom=" + nom + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 2 +"";
+        var re = "http://192.168.1.45/Requetes.php?DepartX=" + plan.DepartX + "&DepartY=" + plan.DepartY + "&DepartZ=" + plan.DepartZ + "&FinX=" + plan.FinX +"&FinY=" + plan.FinY + "&FinZ=" + plan.FinZ + "&Angle=" + plan.Angle +"&nom=" + nom + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 2 +"";
     //on appelle le fichier requete.txt
-    xhr.open("GET","http://192.168.1.50/Requetes.php?DepartX=" + plan.DepartX + "&DepartY=" + plan.DepartY + "&DepartZ=" + plan.DepartZ + "&FinX=" + plan.FinX +"&FinY=" + plan.FinY + "&FinZ=" + plan.FinZ + "&Angle=" + plan.Angle +"&nom=" + nom + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 2 +"" , true);
+    xhr.open("GET","http://192.168.1.45/Requetes.php?DepartX=" + plan.DepartX + "&DepartY=" + plan.DepartY + "&DepartZ=" + plan.DepartZ + "&FinX=" + plan.FinX +"&FinY=" + plan.FinY + "&FinZ=" + plan.FinZ + "&Angle=" + plan.Angle +"&nom=" + nom + "&addresse=" + addresse + "&cp=" + cp +"&i=" + 2 +"" , true);
     xhr.send(null);
     
 }

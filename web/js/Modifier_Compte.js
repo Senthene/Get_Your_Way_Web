@@ -13,6 +13,7 @@ function chargmentCompte(){
     }
     //Si il est connecté
     else {
+        document.getElementById("name").innerHTML = profil[0].J01_NOM + " " + profil[0].J01_PRENOM;
         document.getElementById("nom").value = profil[0].J01_NOM;
         document.getElementById("prenom").value = profil[0].J01_PRENOM;
         document.getElementById("email").value = profil[0].J01_EMAIL;
@@ -30,18 +31,22 @@ function updateProfil(){
     var email = document.getElementById("email").value;
     var mdp = document.getElementById("mdp").value;
     
+    var xmlhttp =null;
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://192.168.43.30/Requetes.php?email=" + email + "&mdp=" + mdp + "&prenom=" + prenom + "&nom=" + nom + "&id=" + id + "&i=1&y=3";
-    console.log(url);
-    xmlhttp.open('GET',url,true);
-    xmlhttp.send(null);
+    var url = "http://192.168.1.50/Requetes.php";
+    xmlhttp.open('POST',url,true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send("email=" + email + "&mdp=" + mdp + "&prenom=" + prenom + "&nom=" + nom + "&id=" + id + "&i=1&y=3");
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
             if ( xmlhttp.status == 200) {
-                if (xmlhttp.responseText == 0) {
-                    alert("Votre identifiant ou votre mdp n'existe pas");
+                if(xmlhttp.responseText == "42S020"){
+                    alert("Erreur sur la requete SQL");
                 }
-                else{
+                else if (xmlhttp.responseText==0){
+                    alert("L'adresse email ne peut être remplacer par " + email + " car elle est deja utilisée par un autre utilisateur.")
+                }
+                else {
                     var resultat = eval( "(" +  xmlhttp.responseText + ")"); 
                     sessionStorage.clear();
                     var monobjet_json = JSON.stringify(resultat);

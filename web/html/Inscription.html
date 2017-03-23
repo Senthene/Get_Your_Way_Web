@@ -15,7 +15,7 @@
 	<link rel="icon" type="image/png" href="../img/favicons/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="../img/favicons/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="../img/favicons/manifest.json">
-	<link rel="shortcut icon" href="../img/favicons/favicon.ico">
+	
 	<meta name="msapplication-TileColor" content="#00a8ff">
 	<meta name="msapplication-config" content="../img/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
@@ -40,27 +40,36 @@
 	<div class="preloader">
             <img src="../img/loader.gif" alt="Preloader image">
 	</div>
-	<nav class="navbar">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Menu</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="../index.html"><img data-active-url="../img/logo-active.png" alt=""></a>
-			</div>
-		</div>
+	<section class="section cyan">
+		        <div class="container">
+            <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Menu</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="../index.html"><img src="../img/logo.png" data-active-url="../img/logo-active.png" alt="../index.html"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right main-nav">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li></li>
+                </ul>
+            </div>
+            
+			<!-- /.navbar-collapse -->
+	</div>
 		<!-- /.container-fluid -->
-	</nav>
-      
-	<section id="création" class="section section-padded">
+        <div class="grid">
+	</section>
+
+	<section id="création" class="section gray-bg">
 		<div class="container">
-			<div class="row text-center title">
-				<h2>Créer un compte facilement !</h2>
-				<h4 class="light muted">Qui êtes vous ?</h4>
-			</div>
+			<div class="container">
+                            <h2>Qui êtes-vous ?</h2>
+                        <hr>
 			<div class="container">
                             <form method="post" action="Profil.html">
                                 
@@ -92,7 +101,7 @@
                                         </div>
                                     </div> 
                                     <div class="form-group row">
-                                        <div class="offset-sm-2 col-sm-10">
+                                        <div class="offset-sm-2 " align="center">
                                             <a class="btn btn-blue" onclick="Inscription()">Créer votre compte</a>
                                         </div>
                                     </div>
@@ -100,14 +109,13 @@
                             </form>
                         </div>
 		</div>
-		<div class="cut cut-bottom"></div>
 	</section>                           
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 text-center-mobile">
 					<h3 class="white">En partenariat avec l'Université d'Evry</h3>
-					<h5 class="light regular light-white">Tuteur du projet : Monsieur Ledoux</h5>
+					<h5 class="light regular light-white">Tuteur du projet : Monsieur Poligny</h5>
 				</div>
 		</div>
 			<div class="row bottom-footer text-center-mobile">
