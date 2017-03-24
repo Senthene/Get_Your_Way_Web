@@ -15,6 +15,10 @@
 	<link rel="icon" type="image/png" href="../img/favicons/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="../img/favicons/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="../img/favicons/manifest.json">
+        <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        
+        <script src="https://d3js.org/d3.v3.min.js"></script>    
+        <script src="../css/d3/d3.floorplan.min.js" type="text/javascript"></script>
                 <style>
       #map {
         height: 400px;
@@ -38,7 +42,7 @@
         <script src="../js/Verification_Compte.js" type="text/javascript"></script>
 </head>
 
-<body onload="verifCompte()">
+<body> <!-- onload="verifCompte()">-->
     <div class="preloader">
 	<img src="../img/loader.gif" alt="Preloader image">
     </div>
@@ -167,7 +171,7 @@
                 </div>
             </div>
         </div>
-    </sction>
+    </section>
     
     <section id="etape-4" style="display: none">
         <div class="container">
@@ -180,10 +184,22 @@
     </section>
     <!-- Section de d'ajout d'une carte -->
    
-    <section id="etape-5" class="section section gray-bg"
-        <canvas id="canvas"> 
-            Texte alternatif pour les navigateurs ne supportant pas Canvas.
-        </canvas>
+    <section id="etape-5" class="section section gray-bg">
+        
+        <div id="demo"></div>
+        <script type="text/javascript">
+            $(".show-hide").click(function() {
+                    if ($(this).text() === "Show Code") {
+                            var code = $("#" + $(this).attr("content")).text();
+                            $(this).parent().append("<pre>" + code + "</pre>");
+                            $(this).text("Hide Code");
+                    } else {
+                            $(this).siblings("pre").remove();
+                            $(this).text("Show Code");
+                    }
+                    event.preventDefault();
+            });
+        </script>
     </section>
 
     <footer>
@@ -213,6 +229,7 @@
 	<script src="../js/jquery.onepagenav.js"></script>
 	<script src="../js/main.js"></script>
         <script src="../js/geolocalisation.js"></script>
+        <script src="../js/Carte/DrawMap.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx_Gm4ZvwmhrPwRt1YKjKNp53odiHbgQ&signed_in=true" async defer></script>
 
 </body>
