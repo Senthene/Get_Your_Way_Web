@@ -1,29 +1,30 @@
-/* Déclaration des variables  */
-  /* global google */
-document.querySelector("html").classList.add('js');
- 
-// initialisation des variables
-var fileInput  = document.querySelector( ".input-file" ),  
-    button     = document.querySelector( ".input-file-trigger" ),
-    the_return = document.querySelector(".file-return");
- 
-// action lorsque la "barre d'espace" ou "Entrée" est pressée
-button.addEventListener( "keydown", function( event ) {
-    if ( event.keyCode == 13 || event.keyCode == 32 ) {
-        fileInput.focus();
-    }
+$("path, circle").hover(function(e) {
+  $('#info-box').css('display','block');
+  $('#info-box').html($(this).data('info'));
 });
- 
-// action lorsque le label est cliqué
-button.addEventListener( "click", function( event ) {
-   fileInput.focus();
-   return false;
+
+$("path, circle").mouseleave(function(e) {
+  $('#info-box').css('display','none');
 });
- 
-// affiche un retour visuel dès que input:file change
-fileInput.addEventListener( "change", function( event ) {  
-    the_return.innerHTML = this.value;  
+
+$(document).on('mousemove', 'path',function(e) {
+  $('#info-box').css('top',e.pageY-$('#info-box').height()-30);
+  $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
 });
+
+$(document).on('click', 'path', function() { 
+    var elt = this;
+    var idElt = this.getAttribute('id');
+    document.getElementById("id-path").innerHTML = idElt;
+    document.getElementById('informationCarte').style="block";
+	
+});
+
+
+
+
+
+
 var geocoder;
   var map;
   var markers = new Array();
@@ -79,10 +80,13 @@ function geocodeAddress() {
         });
         
         document.getElementById("resultat").innerHTML = results[0].formatted_address;
-        document.getElementById("adresse").innerHTML += results[0].formatted_address;
-        document.getElementById("place_id").innerHTML += results[0].place_id;
-        document.getElementById("latitude").innerHTML += results[0].geometry.location.lat();
-        document.getElementById("longitude").innerHTML += results[0].geometry.location.lng();
+        //extractFromAdress(results[0].address_components, "administrative_area_level_2")
+        document.getElementById("adresse").innerHTML =  extractFromAdress(results[0].address_components, "route");
+        document.getElementById("cp").innerHTML = extractFromAdress(results[0].address_components, "postal_code");
+        document.getElementById("country").innerHTML = extractFromAdress(results[0].address_components, "country");
+        document.getElementById("place_id").innerHTML = results[0].place_id;
+        document.getElementById("latitude").innerHTML = results[0].geometry.location.lat();
+        document.getElementById("longitude").innerHTML = results[0].geometry.location.lng();
         document.getElementById("step-1").className = "col-xs-3 bs-wizard-step complete";
       } else {
         document.getElementById("divResultat").style="none";
@@ -92,10 +96,15 @@ function geocodeAddress() {
       }
     });
 }
-
+function extractFromAdress(components, type){
+    for (var i=0; i<components.length; i++)
+        for (var j=0; j<components[i].types.length; j++)
+            if (components[i].types[j]==type) return components[i].long_name;
+    return "";
+}
 function addressValide(){
     
-    document.getElementById("resultatRecherche").style.display="block";
+    
     document.getElementById("etape-1").style.display="none";
     document.getElementById("etape-2").style.display="none";
     document.getElementById("etape-3").style="block";
@@ -186,4 +195,8 @@ function chargementImage(){
 function etape4(){
     document.getElementById("etape-3").style="none";
     document.getElementById("etape-4").style="block";
+    document.getElementById("step-2").className = "col-xs-3 bs-wizard-step complete";
 }
+
+
+

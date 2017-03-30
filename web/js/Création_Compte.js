@@ -47,7 +47,7 @@ function CreationCompte() {
     //console.log("http://192.168.1.50/Requetes.php?nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=1&y=2");
     //on appelle le fichier requete.txt
     
-    xhr.open("POST","http://192.168.1.50/Requetes.php" , true);
+    xhr.open("POST","http://getyourwyn.cluster023.hosting.ovh.net/Requetes.php" , true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("nom=" + nom + "&email=" + email + "&prenom=" + prénom + "&mdp=" + mdp +"&i=1&y=2");
 
@@ -55,8 +55,8 @@ function CreationCompte() {
          
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
                if(xhr.responseText=="OK"){
-                   sessionStorage.setItem("objet",monobjet_json );
-                   location.href="Profil.html";
+                   alert("Votre inscription est un succès.");
+                   location.href="../index.html";
                }
                else if(xhr.responseText=="KO"){
                    alert("Cette adresse email existe déja.");

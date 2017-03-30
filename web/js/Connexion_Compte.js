@@ -10,7 +10,7 @@ function Connexion(){
     var xmlhttp =null;
     var xmlhttp = new XMLHttpRequest();
     
-    var url = "http://192.168.1.50/Requetes.php";
+    var url = "http://getyourwyn.cluster023.hosting.ovh.net/Requetes.php";
     
     xmlhttp.open('POST',url,true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
